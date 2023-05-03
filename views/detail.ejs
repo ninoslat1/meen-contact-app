@@ -1,0 +1,30 @@
+<div class="container mt-3">
+    <div class="d-flex justify-content-center align-items-baseline text-center">
+        <div class="p-5">
+            <% if (!contact) { %>
+                <div class="alert alert-danger fw-bold" role="alert">
+                    Data contact isn't exist 
+                    <br/> <a href="/contact" class="alert-link fw-normal">&laquo; Back</a>
+                </div>
+            <% } else { %>
+            <h2>Detail Contact <%= contact.name %> </h2>
+            <div class="card text-center m-5" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title"><%= contact.name %></h5>
+                  <h6 class="card-subtitle mb-2 text-muted"><%= contact.number %></h6>
+                  <p class="card-text"><%= contact.email %></p>
+                  <div class="d-flex justify-content-between">
+                      <a href="/contact" class="card-link">&laquo; Back</a>
+                      <!-- <a href="/contact/delete/<%= contact.name %>" class="btn btn-danger badge p-1" onclick='return confirm("Are you sure?");'>Hapus</a> -->
+                      <form action="/contact?_method=DELETE" method="POST">
+                        <input type="hidden" name="name" value="<%= contact.name %>"/>
+                        <button type="submit" class="btn btn-danger badge p-1" onclick='return confirm("Are you sure?");'>Delete</button>
+                      </form>
+                      <a href="/contact/edit/<%= contact.name %>" class="btn btn-info badge p-1">Edit</a>
+                  </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</div>

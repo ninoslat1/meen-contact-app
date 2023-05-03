@@ -1,0 +1,20 @@
+.mongodb:hover{
+    transform: scale(1.2);
+    fill: #4FAA41;
+}
+
+.node:hover{
+    transform: scale(1.2);
+    fill: #4FAA41;
+}
+
+.express:hover{
+    transform: scale(1.2);
+    background-color: yellow;
+    padding: 0 0.5em;
+}
+
+svg {
+    transition: all 1s;
+    transform-origin: 50% 50%;
+}
